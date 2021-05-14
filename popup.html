@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sign Up</title>
+  <link rel="icon" href="TAB1.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+
+  <div class="login-popup">
+  	 <div class="box">
+  	 	 <div class="img-area">
+  	 	 	<div class="img">
+            <img src= medd.png>
+  	 	 	</div>
+  	 	 	<h1>Med Dynamic</h1>
+  	 	 </div>
+  	 	 <div class="form">
+  	 	 	<div class="close">&times;</div>
+  	 	 	<h1>Sign Up</h1>
+  	 	 	<form>
+  	 	 		<div class="form-group">
+  	 	 			<input type="text" placeholder="Email" class="form-control">
+  	 	 		</div>
+  	 	 		<!--<div class="form-group">
+  	 	 			<input type="password" placeholder="Password" class="form-control">
+  	 	 		</div>-->
+  	 	 		<div class="form-group">
+  	 	 			<label><input type="checkbox">
+  	 	 				Email Me For Coupons
+  	 	 			</label>
+  	 	 		</div>
+  	 	 		<button type="button" class="btn">Sign Up</button>
+  	 	 	</form>
+  	 	 </div>
+  	 </div>
+  </div>
+
+<script>
+
+  const loginPopup = document.querySelector(".login-popup");
+  const close = document.querySelector(".close");
+
+
+  window.addEventListener("load",function(){
+ 
+   showPopup();
+   // setTimeout(function(){
+   //   loginPopup.classList.add("show");
+   // },5000)
+
+  })
+
+  function showPopup(){
+        const timeLimit = 5 // seconds;
+        let i=0;
+        const timer = setInterval(function(){
+         i++;
+         if(i == timeLimit){
+          clearInterval(timer);
+          loginPopup.classList.add("show");
+         } 
+         console.log(i)
+        },1000);
+  }
+
+
+  close.addEventListener("click",function(){
+    loginPopup.classList.remove("show");
+  })
+
+</script>
+</body>
+</html>
